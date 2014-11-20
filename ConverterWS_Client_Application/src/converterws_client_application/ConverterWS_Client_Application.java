@@ -5,6 +5,11 @@
  */
 package converterws_client_application;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.text.NumberFormat;
+import java.text.ParseException;
+
 /**
  *
  * @author Arnis
@@ -15,14 +20,34 @@ public class ConverterWS_Client_Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+         System.out.print("Enter Euros to convert in USD: ");
+          BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+          String euros = null;
         try{
-        double euro = 1.25;
+          euros = br.readLine();
+          double eu = NumberFormat.getInstance().parse(euros).doubleValue();
+     
         double usd = 1.25;
-         double result = euroUsd(euro/usd);
+         double result = eu*usd;
+         
          System.out.println("Result: " +result);
         }catch(Exception e){
             System.out.println("Exception: " + e);
+        }
+        //Getting USD to convert into euros
+          System.out.print("Enter USD to convert in Euro: ");
+          BufferedReader bre = new BufferedReader(new InputStreamReader(System.in)); 
+          String usds = null;
+        try{
+          usds = bre.readLine();
+          double us = NumberFormat.getInstance().parse(euros).doubleValue();
+     
+        double euro = 1.25;
+        double result2 = us/euro;
+         
+         System.out.println("Result: " +result2);
+        }catch(Exception ex){
+            System.out.println("Exception: " + ex);
         }
     }
 

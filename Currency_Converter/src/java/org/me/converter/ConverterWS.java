@@ -21,8 +21,7 @@ public class ConverterWS {
      */
     @WebMethod(operationName = "usdEuro")
     public double usdEuro(@WebParam(name = "usd") double usd ){
-        //TODO write your implementation code here:
-        
+        //converts usd to euro
           double result = usd/ 1.25;
           return result;
     }
@@ -32,7 +31,7 @@ public class ConverterWS {
      */
     @WebMethod(operationName = "euroUsd")
     public double euroUsd(@WebParam(name = "euro") double euro) {
-        //TODO write your implementation code here:
+        //Converts euros to usd
         double result = 1.25 * euro;
         return result;
     }
