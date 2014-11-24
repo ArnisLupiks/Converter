@@ -5,18 +5,16 @@
  */
 package org.me.converter.client;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.text.NumberFormat;
+import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
-import org.me.converter.ConverterWS_Service;
+import org.me.converter.CoverterWS_Service;
 
 /**
  *
@@ -24,8 +22,8 @@ import org.me.converter.ConverterWS_Service;
  */
 @WebServlet(name = "ClientServlet", urlPatterns = {"/ClientServlet"})
 public class ClientServlet extends HttpServlet {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Currency_Converter/ConverterWS.wsdl")
-    private ConverterWS_Service service;
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/CoverterWS/CoverterWS.wsdl")
+    private CoverterWS_Service service;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -48,36 +46,32 @@ public class ClientServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ClientServlet at " + request.getContextPath() + "</h1>");
-            out.println("Enter Euros to convert in USD: ");
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
-            String euros = null;
-            try{
-                euros = br.readLine();
-                double eu = NumberFormat.getInstance().parse(euros).doubleValue();
-                double usd = 1.25;
-                double result = eu*usd;
-            out.println("Result: " +result);
-            }catch(Exception e){
-            out.println("Exception: " + e);
-            }
-            //Getting USD to convert into euros
-            out.println("Enter USD to convert in Euro: ");
-            BufferedReader bre = new BufferedReader(new InputStreamReader(System.in)); 
-            String usds = null;
-            try{
-                usds = bre.readLine();
-                double us = NumberFormat.getInstance().parse(euros).doubleValue();
-                double euro = 1.25;
-                double result2 = us/euro;
-            out.println("Result: " +result2);
-            }catch(Exception ex){
-            out.println("Exception: " + ex);
-            }
+            
+            
+        try{
+            double usd = 20;
+            out.println("<h1>Converted amount is 20 USD</h1>");
+            double result = usd * 1.78; 
+         out.println("<h2>Result USD to Euro: "+result+"</h2>");
+        }catch (Exception ex){
+            out.println("Error: "+ex);
+        }
+        try{
+            double euro = 20;
+            out.println("<h1>Converted amount is 20 Euro</h1>");
+            double result2 = euro / 1.78; 
+         out.println("<h2>Result Euro to USD: "+result2+"</h2>");
+        }catch (Exception exe){
+            out.println("Error: "+exe);
+        }
+       
+            
             out.println("</body>");
             out.println("</html>");
+        }finally{
+            out.close();
         }
-    
-}
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -118,18 +112,18 @@ public class ClientServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private double euroUsd(double euro) {
+    private double euroToUsd(double euro) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        org.me.converter.ConverterWS port = service.getConverterWSPort();
-        return port.euroUsd(euro);
+        org.me.converter.CoverterWS port = service.getCoverterWSPort();
+        return port.euroToUsd(euro);
     }
 
-    private double usdEuro(double usd) {
+    private double usdToEuro(double usd) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        org.me.converter.ConverterWS port = service.getConverterWSPort();
-        return port.usdEuro(usd);
+        org.me.converter.CoverterWS port = service.getCoverterWSPort();
+        return port.usdToEuro(usd);
     }
 
 }

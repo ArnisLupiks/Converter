@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -41,3 +42,14 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+/ConverterWsApplication/nbproject/private/
+/ConverterWsApplication/build/
+/ConverterWS_Client_Application/nbproject/private/
+/ConverterWsApplication/dist/
+/ConverterWS_Client_Application/build/
+/ConverterWSServletClient/nbproject/private/
+/ConverterWSServletClient/build/
+/ConverterWSServletClient/dist/
+/ConverterWSJSPClient/nbproject/private/
+/ConverterWSJSPClient/build/
+/ConverterWSJSPClient/dist/

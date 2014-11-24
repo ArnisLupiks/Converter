@@ -24,10 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _UsdEuroResponse_QNAME = new QName("http://converter.me.org/", "usdEuroResponse");
-    private final static QName _UsdEuro_QNAME = new QName("http://converter.me.org/", "usdEuro");
-    private final static QName _EuroUsdResponse_QNAME = new QName("http://converter.me.org/", "euroUsdResponse");
-    private final static QName _EuroUsd_QNAME = new QName("http://converter.me.org/", "euroUsd");
+    private final static QName _EuroToUsdResponse_QNAME = new QName("http://converter.me.org/", "euroToUsdResponse");
+    private final static QName _UsdToEuroResponse_QNAME = new QName("http://converter.me.org/", "usdToEuroResponse");
+    private final static QName _EuroToUsd_QNAME = new QName("http://converter.me.org/", "euroToUsd");
+    private final static QName _UsdToEuro_QNAME = new QName("http://converter.me.org/", "usdToEuro");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.me.converter
@@ -37,71 +37,71 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UsdEuroResponse }
+     * Create an instance of {@link EuroToUsdResponse }
      * 
      */
-    public UsdEuroResponse createUsdEuroResponse() {
-        return new UsdEuroResponse();
+    public EuroToUsdResponse createEuroToUsdResponse() {
+        return new EuroToUsdResponse();
     }
 
     /**
-     * Create an instance of {@link UsdEuro }
+     * Create an instance of {@link UsdToEuroResponse }
      * 
      */
-    public UsdEuro createUsdEuro() {
-        return new UsdEuro();
+    public UsdToEuroResponse createUsdToEuroResponse() {
+        return new UsdToEuroResponse();
     }
 
     /**
-     * Create an instance of {@link EuroUsdResponse }
+     * Create an instance of {@link EuroToUsd }
      * 
      */
-    public EuroUsdResponse createEuroUsdResponse() {
-        return new EuroUsdResponse();
+    public EuroToUsd createEuroToUsd() {
+        return new EuroToUsd();
     }
 
     /**
-     * Create an instance of {@link EuroUsd }
+     * Create an instance of {@link UsdToEuro }
      * 
      */
-    public EuroUsd createEuroUsd() {
-        return new EuroUsd();
+    public UsdToEuro createUsdToEuro() {
+        return new UsdToEuro();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UsdEuroResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link EuroToUsdResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://converter.me.org/", name = "usdEuroResponse")
-    public JAXBElement<UsdEuroResponse> createUsdEuroResponse(UsdEuroResponse value) {
-        return new JAXBElement<UsdEuroResponse>(_UsdEuroResponse_QNAME, UsdEuroResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://converter.me.org/", name = "euroToUsdResponse")
+    public JAXBElement<EuroToUsdResponse> createEuroToUsdResponse(EuroToUsdResponse value) {
+        return new JAXBElement<EuroToUsdResponse>(_EuroToUsdResponse_QNAME, EuroToUsdResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UsdEuro }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UsdToEuroResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://converter.me.org/", name = "usdEuro")
-    public JAXBElement<UsdEuro> createUsdEuro(UsdEuro value) {
-        return new JAXBElement<UsdEuro>(_UsdEuro_QNAME, UsdEuro.class, null, value);
+    @XmlElementDecl(namespace = "http://converter.me.org/", name = "usdToEuroResponse")
+    public JAXBElement<UsdToEuroResponse> createUsdToEuroResponse(UsdToEuroResponse value) {
+        return new JAXBElement<UsdToEuroResponse>(_UsdToEuroResponse_QNAME, UsdToEuroResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EuroUsdResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link EuroToUsd }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://converter.me.org/", name = "euroUsdResponse")
-    public JAXBElement<EuroUsdResponse> createEuroUsdResponse(EuroUsdResponse value) {
-        return new JAXBElement<EuroUsdResponse>(_EuroUsdResponse_QNAME, EuroUsdResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://converter.me.org/", name = "euroToUsd")
+    public JAXBElement<EuroToUsd> createEuroToUsd(EuroToUsd value) {
+        return new JAXBElement<EuroToUsd>(_EuroToUsd_QNAME, EuroToUsd.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EuroUsd }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UsdToEuro }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://converter.me.org/", name = "euroUsd")
-    public JAXBElement<EuroUsd> createEuroUsd(EuroUsd value) {
-        return new JAXBElement<EuroUsd>(_EuroUsd_QNAME, EuroUsd.class, null, value);
+    @XmlElementDecl(namespace = "http://converter.me.org/", name = "usdToEuro")
+    public JAXBElement<UsdToEuro> createUsdToEuro(UsdToEuro value) {
+        return new JAXBElement<UsdToEuro>(_UsdToEuro_QNAME, UsdToEuro.class, null, value);
     }
 
 }
